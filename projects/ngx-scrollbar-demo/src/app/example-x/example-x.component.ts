@@ -9,7 +9,7 @@ import {
   ScrollbarTrack,
   ScrollbarPosition,
   ScrollbarVisibility
-} from 'ngx-scrollbar';
+} from '@metrica-sports/ngx-scrollbar';
 import { ResizeChange } from './resize-form/resize-form.component';
 import { ToggleChange } from './toggle-form/toggle-form.component';
 import { ReachedEvent } from './reached-notifier/reached-notifier.component';

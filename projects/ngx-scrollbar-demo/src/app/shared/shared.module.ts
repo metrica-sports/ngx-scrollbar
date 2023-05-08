@@ -16,8 +16,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { NgScrollbarModule } from 'ngx-scrollbar';
-import { NgScrollbarReachedModule } from 'ngx-scrollbar/reached-event';
+import { NgScrollbarModule } from '@metrica-sports/ngx-scrollbar';
+import { NgScrollbarReachedModule } from '@metrica-sports/ngx-scrollbar/reached-event';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';

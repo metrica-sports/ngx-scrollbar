@@ -1,7 +1,7 @@
 import { Directive, Optional, Input, Output, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { Directionality } from '@angular/cdk/bidi';
 import { RtlScrollAxisType } from '@angular/cdk/platform';
-import { NgScrollbar } from 'ngx-scrollbar';
+import { NgScrollbar } from '@metrica-sports/ngx-scrollbar';
 import { Observable, Subject, Subscription, Subscriber } from 'rxjs';
 import { filter, map, tap, distinctUntilChanged } from 'rxjs/operators';
 

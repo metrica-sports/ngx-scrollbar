@@ -378,7 +378,7 @@ To remove complexity, the `ResizeObserver` API by default if it is available in 
 
 ## 3.0.0
 
-- feat(SmoothScroll): Add `[smoothScroll]` directive which can be imported independently e.g. `import {SmoothScrollModule} from 'ngx-scrollbar'`.
+- feat(SmoothScroll): Add `[smoothScroll]` directive which can be imported independently e.g. `import {SmoothScrollModule} from '@metrica-sports/ngx-scrollbar'`.
 - feat(NgScrollbar): Add `[disableOnBreakpoints]` to disable the custom scrollbars on certain breakpoints.
 - refactor(NgScrollbar): Improve performance by removing `(scrollState)` output which causes a change detection on each emit.
 - fix(NgScrollbar): Fallback to native scrollbars on mobile, closes [#59](https://github.com/MurhafSousli/ngx-scrollbar/issues/59).

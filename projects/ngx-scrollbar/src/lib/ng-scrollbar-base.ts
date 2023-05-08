@@ -1,5 +1,5 @@
 import { Directive } from '@angular/core';
-import { SmoothScrollToOptions } from 'ngx-scrollbar/smooth-scroll';
+import { SmoothScrollToOptions } from '@metrica-sports/ngx-scrollbar/smooth-scroll';
 import { Observable } from 'rxjs';
 import { ScrollViewport } from './scroll-viewport';
 import { ScrollbarManager } from './utils/scrollbar-manager';

@@ -1,7 +1,7 @@
 import { Component, Input, ViewChild, AfterViewChecked, OnDestroy, NgZone, ChangeDetectionStrategy } from '@angular/core';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
-import { NgScrollbar } from 'ngx-scrollbar';
+import { NgScrollbar } from '@metrica-sports/ngx-scrollbar';
 
 @Component({
   selector: 'app-navigation-toolbar',
