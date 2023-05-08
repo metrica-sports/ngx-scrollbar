@@ -1,18 +1,24 @@
 {
-  "name": "ngx-scrollbar",
-  "version": "11.0.0",
+  "name": "@metrica-sports/ngx-scrollbar",
+  "version": "1.0.0",
   "license": "MIT",
   "homepage": "https://ngx-scrollbar.netlify.com/",
+  "main": "ngx-scrollbar",
   "author": {
+    "name": "Metrica Sports",
+    "email": "info@metrica-sports.com"
+  },
+  "versionForked": "11.0.0",
+  "authorForked": {
     "name": "Murhaf Sousli",
-    "url": "http://github.com/murhafsousli"
+    "email": "murhafsousli@gmail.com"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MurhafSousli/ngx-scrollbar"
-  },
-  "bugs": {
-    "url": "http://github.com/murhafsousli/ngx-scrollbar/issues"
+    "url": "https://github.com/metrica-sports/ngx-scrollbar"
   },
   "keywords": [
     "scrollbar",

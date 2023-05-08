@@ -111,6 +111,32 @@ $scrollable-height: 296px;
     margin-right: 1em;
     display: inline-block;
   }
+
+  .scrollbar-x-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0px 3px;
+  }
+
+  .scrollbar-y-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 3px 0px;
+  }
+
+  .scrollbar-handle {
+    width: 6px;
+    height: 6px;
+    background: blue;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: all;
+  }
 }
 
 .mat-mdc-card {

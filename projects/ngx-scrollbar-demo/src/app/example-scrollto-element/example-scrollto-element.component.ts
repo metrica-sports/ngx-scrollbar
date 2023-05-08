@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
-import { NgScrollbar } from 'ngx-scrollbar';
+import { NgScrollbar } from '@metrica-sports/ngx-scrollbar';
 
 @Component({
   selector: 'app-example-scrollto-element',

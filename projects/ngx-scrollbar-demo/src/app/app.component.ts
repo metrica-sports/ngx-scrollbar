@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, AfterViewInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { NgScrollbar } from 'ngx-scrollbar';
+import { NgScrollbar } from '@metrica-sports/ngx-scrollbar';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { auditTime, map, tap } from 'rxjs/operators';
 

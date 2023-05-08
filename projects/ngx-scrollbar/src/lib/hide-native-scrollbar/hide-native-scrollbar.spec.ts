@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { NgScrollbarModule, NgScrollbar } from 'ngx-scrollbar';
+import { NgScrollbarModule, NgScrollbar } from '@metrica-sports/ngx-scrollbar';
 
 import { HideNativeScrollbar } from './hide-native-scrollbar';
 

@@ -20,7 +20,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { fromEvent, Observable, Subject } from 'rxjs';
 import { auditTime, filter, map, pairwise, pluck, takeUntil, tap } from 'rxjs/operators';
 import { ScrollViewport } from './scroll-viewport';
-import { SmoothScrollElement, SmoothScrollManager, SmoothScrollToOptions, SmoothScrollToElementOptions } from 'ngx-scrollbar/smooth-scroll';
+import { SmoothScrollElement, SmoothScrollManager, SmoothScrollToOptions, SmoothScrollToElementOptions } from '@metrica-sports/ngx-scrollbar/smooth-scroll';
 import { ScrollbarManager } from './utils/scrollbar-manager';
 import {
   ScrollbarAppearance,

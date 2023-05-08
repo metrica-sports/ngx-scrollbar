@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BidiModule } from '@angular/cdk/bidi';
-import { NgScrollbarModule } from 'ngx-scrollbar';
+import { NgScrollbarModule } from '@metrica-sports/ngx-scrollbar';
 import {
   NgScrollbarReachedTop,
   NgScrollbarReachedBottom,
