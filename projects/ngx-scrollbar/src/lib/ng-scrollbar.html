@@ -15,12 +15,15 @@
                  *ngIf="state.horizontalUsed"
                  [attr.scrollable]="state.isHorizontallyScrollable"
                  [attr.fit]="state.verticalUsed">
+      <ng-content select="[scrollbar-x-content]" ngProjectAs="[scrollbar-x-project]">
+      </ng-content>
     </scrollbar-x>
     <scrollbar-y #scrollbarY
                  *ngIf="state.verticalUsed"
                  [attr.scrollable]="state.isVerticallyScrollable"
                  [attr.fit]="state.horizontalUsed">
+      <ng-content select="[scrollbar-y-content]" ngProjectAs="[scrollbar-y-project]">
+      </ng-content>
     </scrollbar-y>
   </ng-container>
 </div>
-

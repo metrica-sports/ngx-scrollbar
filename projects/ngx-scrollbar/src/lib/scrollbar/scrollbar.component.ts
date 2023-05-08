@@ -13,7 +13,9 @@ import { Scrollbar } from './scrollbar';
   styleUrls: ['./vertical.scss'],
   template: `
     <div scrollbarTrackY class="ng-scrollbar-track {{cmp.trackClass}}">
-      <div scrollbarThumbY class="ng-scrollbar-thumb {{cmp.thumbClass}}"></div>
+      <div scrollbarThumbY class="ng-scrollbar-thumb {{cmp.thumbClass}}">
+        <ng-content select="[scrollbar-y-project]"></ng-content>
+      </div>
     </div>
   `
 })
@@ -46,7 +48,9 @@ export class ScrollbarY extends Scrollbar {
   styleUrls: ['./horizontal.scss'],
   template: `
     <div scrollbarTrackX class="ng-scrollbar-track {{cmp.trackClass}}">
-      <div scrollbarThumbX class="ng-scrollbar-thumb {{cmp.thumbClass}}"></div>
+      <div scrollbarThumbX class="ng-scrollbar-thumb {{cmp.thumbClass}}">
+        <ng-content select="[scrollbar-x-project]"></ng-content>
+      </div>
     </div>
   `
 })
