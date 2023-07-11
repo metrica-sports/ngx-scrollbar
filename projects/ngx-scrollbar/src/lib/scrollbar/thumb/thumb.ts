@@ -75,9 +75,9 @@ export abstract class ThumbAdapter {
       }),
     );
 
-    const dragging = fromEvent<MouseEvent>(this.document, 'mousemove', { capture: true, passive: true }).pipe(stopPropagation());
+    const dragging = fromEvent<MouseEvent>(this.document, 'mousemove', { passive: true }).pipe(stopPropagation());
 
-    const dragEnd = fromEvent<MouseEvent>(this.document, 'mouseup', { capture: true }).pipe(
+    const dragEnd = fromEvent<MouseEvent>(this.document, 'mouseup', { passive: true }).pipe(
       stopPropagation(),
       enableSelection(this.document),
       tap(() => this.setDragging(false))
