@@ -50,6 +50,39 @@
               <app-logo></app-logo>
             </div>
 
+            <div
+              scrollbar-x-content
+              class="scrollbar-x-container"
+              (mousedown)="onMouseDown($event, 'horizontal')"
+            >
+              <span
+                class="scrollbar-handle"
+                (mousedown)="onMouseDown($event, 'horizontal-left')"
+              >
+              </span>
+              <span
+                class="scrollbar-handle"
+                (mousedown)="onMouseDown($event, 'horizontal-right')"
+              >
+              </span>
+            </div>
+            <div
+              scrollbar-y-content
+              class="scrollbar-y-container"
+              (mousedown)="onMouseDown($event, 'vertical')"
+            >
+              <span
+                class="scrollbar-handle"
+                (mousedown)="onMouseDown($event, 'vertical-top')"
+              >
+              </span>
+              <span
+                class="scrollbar-handle"
+                (mousedown)="onMouseDown($event, 'vertical-bottom')"
+              >
+              </span>
+            </div>
+
           </ng-scrollbar>
 
           <ng-template #viewportPointerEvents>
@@ -76,16 +109,7 @@
               <div *ngIf="scrollToElementSelected" id="target">
                 <app-logo></app-logo>
               </div>
-
-              <div scrollbar-x-content class="scrollbar-x-container">
-                <span class="scrollbar-handle"></span>
-                <span class="scrollbar-handle"></span>
-              </div>
-              <div scrollbar-y-content class="scrollbar-y-container">
-                <span class="scrollbar-handle"></span>
-                <span class="scrollbar-handle"></span>
-              </div>
-
+              
             </ng-scrollbar>
           </ng-template>
         </div>

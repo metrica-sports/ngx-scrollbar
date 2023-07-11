@@ -96,6 +96,36 @@ export class ExampleXComponent {
     }
   }
 
+  onMouseDown(event, id) {
+    // We cannot use stop-propagation because scrollbar logic would be blocked.
+    if (event.target !== event.currentTarget) {
+      return
+    }
+
+    console.log('onMouseDown', id);
+
+    const mouseMoveEventListener = this.onMouseMove(id)
+    document.addEventListener('mousemove', mouseMoveEventListener)
+    document.addEventListener('mouseup', this.onMouseUp(id, mouseMoveEventListener))
+  }
+
+  onMouseMove(id) {
+    const eventListener = (event) => {
+      console.log('onMouseMove', id);
+    }
+
+    return eventListener
+  }
+
+  onMouseUp(id, mouseMoveEventListener) {
+    const eventListener = (event) => {
+      console.log('onMouseUp', id);
+      document.removeEventListener('mousemove', mouseMoveEventListener)
+      document.removeEventListener('mouseup', eventListener)
+    }
+
+    return eventListener
+  }
 }
 
 const content = `
