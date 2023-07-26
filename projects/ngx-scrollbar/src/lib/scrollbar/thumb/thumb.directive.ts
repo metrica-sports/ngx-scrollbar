@@ -45,9 +45,9 @@ export class ThumbXDirective extends ThumbAdapter {
     super(cmp, track, element.nativeElement, document);
   }
 
-  protected updateStyles(position: number, size: number) {
-    this.thumbElement.style.width = `${size}px`;
-    this.thumbElement.style.transform = `translate3d(${position}px, 0, 0)`;
+  protected updateStyles(position: number, size: number, useFullSize: boolean): void {
+    this.thumbElement.style.width = useFullSize ? '100%' : `${size}px`;
+    this.thumbElement.style.transform = `translate3d(${useFullSize ? 0 : position}px, 0, 0)`;
   }
 
   protected handleDrag(position: number, scrollMax: number): number {
@@ -130,9 +130,9 @@ export class ThumbYDirective extends ThumbAdapter {
   }
 
 
-  protected updateStyles(position: number, size: number): void {
-    this.thumbElement.style.height = `${size}px`;
-    this.thumbElement.style.transform = `translate3d(0px, ${position}px, 0)`;
+  protected updateStyles(position: number, size: number, useFullSize: boolean): void {
+    this.thumbElement.style.height = useFullSize ? '100%' : `${size}px`;
+    this.thumbElement.style.transform = `translate3d(0px, ${useFullSize ? 0 : position}px, 0)`;
   }
 
   protected handleDrag(position: number): number {

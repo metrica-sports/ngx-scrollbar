@@ -59,9 +59,9 @@ export abstract class ThumbAdapter {
       useFullSize = !this.cmp.state.isVerticallyScrollable && this.cmp.state.verticalDisplayed
     }
 
-    const size = calculateThumbSize(this.track!.size, this.viewportScrollSize, this.cmp.minThumbSize!, useFullSize);
-    const position = calculateThumbPosition(this.viewportScrollOffset, this.viewportScrollMax, this.trackMax, useFullSize);
-    animationFrameScheduler.schedule(() => this.updateStyles(this.handleDirection(position, this.trackMax), size));
+    const size = calculateThumbSize(this.track!.size, this.viewportScrollSize, this.cmp.minThumbSize!);
+    const position = calculateThumbPosition(this.viewportScrollOffset, this.viewportScrollMax, this.trackMax);
+    animationFrameScheduler.schedule(() => this.updateStyles(this.handleDirection(position, this.trackMax), size, useFullSize));
   }
 
   /**
@@ -112,7 +112,7 @@ export abstract class ThumbAdapter {
   protected abstract scrollTo(position: number): void;
 
   // Update thumb element size and position
-  protected abstract updateStyles(position: number, size: number): void;
+  protected abstract updateStyles(position: number, size: number, useFullSize: boolean): void;
 
   // Handle dragging position (Support LTR and RTL directions for the horizontal scrollbar)
   protected abstract handleDrag(position: number, scrollMax?: number): number;
@@ -124,11 +124,7 @@ export abstract class ThumbAdapter {
 /**
  * Calculate scrollbar thumb size
  */
-function calculateThumbSize(trackSize: number, contentSize: number, minThumbSize: number, useFullSize: boolean): number {
-  if (useFullSize) {
-    return trackSize;
-  }
-
+function calculateThumbSize(trackSize: number, contentSize: number, minThumbSize: number): number {
   const scrollbarRatio = trackSize / contentSize;
   const thumbSize = scrollbarRatio * trackSize;
   return Math.max(~~thumbSize, minThumbSize);
@@ -137,10 +133,6 @@ function calculateThumbSize(trackSize: number, contentSize: number, minThumbSize
 /**
  * Calculate scrollbar thumb position
  */
-function calculateThumbPosition(scrollPosition: number, scrollMax: number, trackMax: number, useFullSize: boolean): number {
-  if (useFullSize) {
-    return 0.0;
-  }
-
+function calculateThumbPosition(scrollPosition: number, scrollMax: number, trackMax: number): number {
   return scrollPosition * trackMax / scrollMax;
 }
