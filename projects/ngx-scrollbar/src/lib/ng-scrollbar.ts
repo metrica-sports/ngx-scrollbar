@@ -210,16 +210,20 @@ export class NgScrollbar implements OnInit, OnChanges, AfterViewInit, OnDestroy 
     let horizontalUsed: boolean = false;
     let isVerticallyScrollable: boolean = false;
     let isHorizontallyScrollable: boolean = false;
+    let verticalDisplayed: boolean = false;
+    let horizontalDisplayed: boolean = false;
 
     // Check if vertical scrollbar should be displayed
     if (this.track === 'all' || this.track === 'vertical') {
       isVerticallyScrollable = this.viewport!.scrollHeight > this.viewport!.clientHeight;
       verticalUsed = this.visibility === 'always' || isVerticallyScrollable;
+      verticalDisplayed = isVerticallyScrollable || this.visibility === 'always-thumb';
     }
     // Check if horizontal scrollbar should be displayed
     if (this.track === 'all' || this.track === 'horizontal') {
       isHorizontallyScrollable = this.viewport!.scrollWidth > this.viewport!.clientWidth;
       horizontalUsed = this.visibility === 'always' || isHorizontallyScrollable;
+      horizontalDisplayed = isHorizontallyScrollable || this.visibility === 'always-thumb';
     }
 
     // Update inner wrapper attributes
@@ -234,7 +238,9 @@ export class NgScrollbar implements OnInit, OnChanges, AfterViewInit, OnDestroy 
       verticalUsed,
       horizontalUsed,
       isVerticallyScrollable,
-      isHorizontallyScrollable
+      isHorizontallyScrollable,
+      verticalDisplayed,
+      horizontalDisplayed
     });
   }
 

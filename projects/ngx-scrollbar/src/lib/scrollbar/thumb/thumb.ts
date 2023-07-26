@@ -52,8 +52,15 @@ export abstract class ThumbAdapter {
 
   // Calculate and update thumb position and size
   update() {
-    const size = calculateThumbSize(this.track!.size, this.viewportScrollSize, this.cmp.minThumbSize!);
-    const position = calculateThumbPosition(this.viewportScrollOffset, this.viewportScrollMax, this.trackMax);
+    let useFullSize = false;
+    if (this.pageProperty === 'pageX') {
+      useFullSize = !this.cmp.state.isHorizontallyScrollable && this.cmp.state.horizontalDisplayed
+    } else {
+      useFullSize = !this.cmp.state.isVerticallyScrollable && this.cmp.state.verticalDisplayed
+    }
+
+    const size = calculateThumbSize(this.track!.size, this.viewportScrollSize, this.cmp.minThumbSize!, useFullSize);
+    const position = calculateThumbPosition(this.viewportScrollOffset, this.viewportScrollMax, this.trackMax, useFullSize);
     animationFrameScheduler.schedule(() => this.updateStyles(this.handleDirection(position, this.trackMax), size));
   }
 
@@ -117,7 +124,11 @@ export abstract class ThumbAdapter {
 /**
  * Calculate scrollbar thumb size
  */
-function calculateThumbSize(trackSize: number, contentSize: number, minThumbSize: number): number {
+function calculateThumbSize(trackSize: number, contentSize: number, minThumbSize: number, useFullSize: boolean): number {
+  if (useFullSize) {
+    return trackSize;
+  }
+
   const scrollbarRatio = trackSize / contentSize;
   const thumbSize = scrollbarRatio * trackSize;
   return Math.max(~~thumbSize, minThumbSize);
@@ -126,6 +137,10 @@ function calculateThumbSize(trackSize: number, contentSize: number, minThumbSize
 /**
  * Calculate scrollbar thumb position
  */
-function calculateThumbPosition(scrollPosition: number, scrollMax: number, trackMax: number): number {
+function calculateThumbPosition(scrollPosition: number, scrollMax: number, trackMax: number, useFullSize: boolean): number {
+  if (useFullSize) {
+    return 0.0;
+  }
+
   return scrollPosition * trackMax / scrollMax;
 }

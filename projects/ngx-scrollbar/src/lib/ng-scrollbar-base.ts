@@ -3,13 +3,14 @@ import { SmoothScrollToOptions } from '@metrica-sports/ngx-scrollbar/smooth-scro
 import { Observable } from 'rxjs';
 import { ScrollViewport } from './scroll-viewport';
 import { ScrollbarManager } from './utils/scrollbar-manager';
-import { ScrollbarPointerEventsMethod } from './ng-scrollbar.model';
+import { NgScrollbarState, ScrollbarPointerEventsMethod } from './ng-scrollbar.model';
 
 @Directive()
 export abstract class NgScrollbarBase {
   abstract manager: ScrollbarManager;
 
   abstract viewport: ScrollViewport;
+  abstract state: NgScrollbarState;
   abstract trackClass: string;
   abstract thumbClass: string;
   abstract minThumbSize: number;
