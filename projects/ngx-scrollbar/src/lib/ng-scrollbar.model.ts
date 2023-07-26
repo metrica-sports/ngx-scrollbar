@@ -2,7 +2,7 @@ import { InjectionToken } from '@angular/core';
 
 export type ScrollbarAppearance = 'standard' | 'compact';
 export type ScrollbarTrack = 'vertical' | 'horizontal' | 'all';
-export type ScrollbarVisibility = 'hover' | 'always' | 'native';
+export type ScrollbarVisibility = 'hover' | 'always' | 'native' | 'always-thumb';
 export type ScrollbarPosition = 'native' | 'invertY' | 'invertX' | 'invertAll';
 export type ScrollbarPointerEventsMethod = 'viewport' | 'scrollbar';
 
@@ -95,6 +95,8 @@ export interface NgScrollbarState {
   horizontalUsed?: boolean;
   isVerticallyScrollable?: boolean;
   isHorizontallyScrollable?: boolean;
+  verticalDisplayed?: boolean;
+  horizontalDisplayed?: boolean;
   verticalHovered?: boolean;
   horizontalHovered?: boolean;
   verticalDragging?: boolean;

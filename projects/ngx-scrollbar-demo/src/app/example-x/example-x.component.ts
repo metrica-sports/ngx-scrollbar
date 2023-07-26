@@ -45,7 +45,7 @@ export class ExampleXComponent {
   cssVariables: SafeStyle;
   position: ScrollbarPosition = 'native';
   direction: ScrollbarTrack = 'all';
-  visibility: ScrollbarVisibility = 'native';
+  visibility: ScrollbarVisibility = 'always-thumb';
   appearance: ScrollbarAppearance = 'compact';
 
   reached = new BehaviorSubject<ReachedEvent>({});
